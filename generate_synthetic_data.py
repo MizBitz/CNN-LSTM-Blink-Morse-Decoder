@@ -43,7 +43,7 @@ MORSE_CODE_DICT = {
 # We ignore WPM formulas and just use "Short vs Long" logic.
 DOT_MEAN = 0.15   # Average time for a Dot (0.25s)
 DASH_MEAN = 0.65  # Average time for a Dash (0.75s)
-JITTER = 0.1     # Standard Deviation (Randomness)
+JITTER = 0.05     # Standard Deviation (Randomness)
 
 def generate_duration(symbol):
     """
