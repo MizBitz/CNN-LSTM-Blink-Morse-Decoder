@@ -12,7 +12,7 @@ import random
 DATASET_DIR = "dataset_dynamic_aligned"
 
 # 2. Capture Source (0 = Webcam)
-CAPTURE_SOURCE = 0
+CAPTURE_SOURCE = 1
 
 # --- DYNAMIC CURVE CONFIGURATION ---
 BASE_CLOSED_THRESH = 0.08   
@@ -344,10 +344,9 @@ while cap.isOpened():
             cv2.circle(frame, pt, 1, (0, 255, 0), -1)
 
     # UI Overlay
-    cv2.putText(frame, f"EAR  L:{left_ear:.3f}/{left_ear_min:.3f}  R:{right_ear:.3f}/{right_ear_min:.3f}", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
-    cv2.putText(frame, f"Center  L:{left_center_ratio:.3f}  R:{right_center_ratio:.3f}", (20, 75), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (200, 200, 200), 1)
-    
-    cv2.putText(frame, status_text, (20, 150), cv2.FONT_HERSHEY_SIMPLEX, 0.8, status_color, 2)
+    cv2.putText(frame, f"EAR  L:{left_ear:.3f}/{left_ear_min:.3f}  R:{right_ear:.3f}/{right_ear_min:.3f}", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2)
+    cv2.putText(frame, f"Center  L:{left_center_ratio:.3f}  R:{right_center_ratio:.3f}", (20, 75), cv2.FONT_HERSHEY_SIMPLEX, 1.1, (200, 200, 200), 1)
+    cv2.putText(frame, status_text, (20, 150), cv2.FONT_HERSHEY_SIMPLEX, 1.3, status_color, 2)
 
     frame_index += 1
     cv2.imshow("Webcam DataGen", frame)
