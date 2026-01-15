@@ -345,7 +345,7 @@ while cap.isOpened():
 
     # UI Overlay
     cv2.putText(frame, f"EAR  L:{left_ear:.3f}/{left_ear_min:.3f}  R:{right_ear:.3f}/{right_ear_min:.3f}", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2)
-    cv2.putText(frame, f"Center  L:{left_center_ratio:.3f}  R:{right_center_ratio:.3f}", (20, 75), cv2.FONT_HERSHEY_SIMPLEX, 1.1, (200, 200, 200), 1)
+    cv2.putText(frame, f"Center  L:{left_center_ratio:.3f}  R:{right_center_ratio:.3f}", (20, 75), cv2.FONT_HERSHEY_SIMPLEX, 1.1, (255, 255, 0), 1)
     cv2.putText(frame, status_text, (20, 150), cv2.FONT_HERSHEY_SIMPLEX, 1.3, status_color, 2)
 
     frame_index += 1

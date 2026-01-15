@@ -1,0 +1,101 @@
+{"ts": 1768441845.0915558, "type": "blink_recorded", "blink_duration_sec": 0.10375332832336426}
+{"ts": 1768441846.1511822, "type": "blink_recorded", "blink_duration_sec": 0.17041420936584473}
+{"ts": 1768441846.732535, "type": "blink_recorded", "blink_duration_sec": 0.20296597480773926}
+{"ts": 1768441847.8782, "type": "blink_recorded", "blink_duration_sec": 0.6811342239379883}
+{"ts": 1768441848.9132597, "type": "token_committed", "mode": "WORD", "token": "Bomb Threat", "blink_sequence_sec": [0.10375332832336426, 0.17041420936584473, 0.20296597480773926, 0.6811342239379883], "transcript": "Bomb Threat", "prompt": null}
+{"ts": 1768441852.7729456, "type": "blink_recorded", "blink_duration_sec": 0.06966757774353027}
+{"ts": 1768441853.7894351, "type": "token_committed", "mode": "WORD", "token": "Registration Information", "blink_sequence_sec": [0.06966757774353027], "transcript": "Bomb Threat Registration Information", "prompt": null}
+{"ts": 1768441899.9366894, "type": "blink_recorded", "blink_duration_sec": 0.13677978515625}
+{"ts": 1768441900.99065, "type": "blink_recorded", "blink_duration_sec": 0.6274697780609131}
+{"ts": 1768441902.013025, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.13677978515625, 0.6274697780609131], "transcript": "A", "prompt": null}
+{"ts": 1768441903.5486987, "type": "blink_recorded", "blink_duration_sec": 0.16990399360656738}
+{"ts": 1768441904.5736918, "type": "blink_recorded", "blink_duration_sec": 0.6304922103881836}
+{"ts": 1768441905.0919328, "type": "blink_recorded", "blink_duration_sec": 0.1358046531677246}
+{"ts": 1768441906.1103337, "type": "token_committed", "mode": "CHAR", "token": "R", "blink_sequence_sec": [0.16990399360656738, 0.6304922103881836, 0.1358046531677246], "transcript": "AR", "prompt": null}
+{"ts": 1768441907.0985682, "type": "blink_recorded", "blink_duration_sec": 0.20547699928283691}
+{"ts": 1768441907.5081244, "type": "blink_recorded", "blink_duration_sec": 0.10177779197692871}
+{"ts": 1768441908.5295255, "type": "token_committed", "mode": "CHAR", "token": "I", "blink_sequence_sec": [0.20547699928283691, 0.10177779197692871], "transcript": "ARI", "prompt": null}
+{"ts": 1768441909.7212315, "type": "blink_recorded", "blink_duration_sec": 0.13529062271118164}
+{"ts": 1768441910.745787, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.13529062271118164], "transcript": "ARIE", "prompt": null}
+{"ts": 1768441912.0066473, "type": "blink_recorded", "blink_duration_sec": 0.1368100643157959}
+{"ts": 1768441912.4165885, "type": "blink_recorded", "blink_duration_sec": 0.17090153694152832}
+{"ts": 1768441912.722783, "type": "blink_recorded", "blink_duration_sec": 0.125779390335083}
+{"ts": 1768441913.7496102, "type": "token_committed", "mode": "CHAR", "token": "S", "blink_sequence_sec": [0.1368100643157959, 0.17090153694152832, 0.125779390335083], "transcript": "ARIES", "prompt": null}
+{"ts": 1768441917.7732968, "type": "word_boundary_commit", "word": "ARIES", "mode": "CHAR", "transcript": "ARIES", "prompt": null}
+{"ts": 1768441923.601327, "type": "blink_recorded", "blink_duration_sec": 0.1017453670501709}
+{"ts": 1768441924.762516, "type": "blink_recorded", "blink_duration_sec": 0.72117018699646}
+{"ts": 1768441925.8549685, "type": "blink_recorded", "blink_duration_sec": 0.7727582454681396}
+{"ts": 1768441926.3650599, "type": "blink_recorded", "blink_duration_sec": 0.20542073249816895}
+{"ts": 1768441927.391948, "type": "token_committed", "mode": "CHAR", "token": "P", "blink_sequence_sec": [0.1017453670501709, 0.72117018699646, 0.7727582454681396, 0.20542073249816895], "transcript": "ARIES P", "prompt": null}
+{"ts": 1768441929.7467315, "type": "blink_recorded", "blink_duration_sec": 0.23506784439086914}
+{"ts": 1768441930.7670877, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.23506784439086914], "transcript": "ARIES PE", "prompt": null}
+{"ts": 1768441935.750091, "type": "word_boundary_commit", "word": "P", "mode": "CHAR", "transcript": "ARIES P", "prompt": null}
+{"ts": 1768441937.5216057, "type": "blink_recorded", "blink_duration_sec": 0.13930034637451172}
+{"ts": 1768441938.6432285, "type": "blink_recorded", "blink_duration_sec": 0.677588939666748}
+{"ts": 1768441939.0291994, "type": "blink_recorded", "blink_duration_sec": 0.13682150840759277}
+{"ts": 1768441940.040985, "type": "token_committed", "mode": "CHAR", "token": "R", "blink_sequence_sec": [0.13930034637451172, 0.677588939666748, 0.13682150840759277], "transcript": "ARIES P R", "prompt": null}
+{"ts": 1768441941.9739609, "type": "blink_recorded", "blink_duration_sec": 0.6134071350097656}
+{"ts": 1768441943.184249, "type": "blink_recorded", "blink_duration_sec": 0.7853579521179199}
+{"ts": 1768441944.373005, "type": "blink_recorded", "blink_duration_sec": 0.7993459701538086}
+{"ts": 1768441945.3969662, "type": "token_committed", "mode": "CHAR", "token": "O", "blink_sequence_sec": [0.6134071350097656, 0.7853579521179199, 0.7993459701538086], "transcript": "ARIES P RO", "prompt": null}
+{"ts": 1768441946.9299533, "type": "blink_recorded", "blink_duration_sec": 0.20596051216125488}
+{"ts": 1768441947.306862, "type": "blink_recorded", "blink_duration_sec": 0.13683748245239258}
+{"ts": 1768441947.7528892, "type": "blink_recorded", "blink_duration_sec": 0.13331151008605957}
+{"ts": 1768441948.7764323, "type": "token_committed", "mode": "CHAR", "token": "S", "blink_sequence_sec": [0.20596051216125488, 0.13683748245239258, 0.13331151008605957], "transcript": "ARIES P ROS", "prompt": null}
+{"ts": 1768441949.8329663, "type": "blink_recorded", "blink_duration_sec": 0.10022664070129395}
+{"ts": 1768441950.818847, "type": "blink_recorded", "blink_duration_sec": 0.6150076389312744}
+{"ts": 1768441951.840389, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.10022664070129395, 0.6150076389312744], "transcript": "ARIES P ROSA", "prompt": null}
+{"ts": 1768441954.0930734, "type": "blink_recorded", "blink_duration_sec": 0.17235684394836426}
+{"ts": 1768441955.1191003, "type": "blink_recorded", "blink_duration_sec": 0.6515157222747803}
+{"ts": 1768441955.6318817, "type": "blink_recorded", "blink_duration_sec": 0.1027381420135498}
+{"ts": 1768441955.903998, "type": "blink_recorded", "blink_duration_sec": 0.13431453704833984}
+{"ts": 1768441956.9290304, "type": "token_committed", "mode": "CHAR", "token": "L", "blink_sequence_sec": [0.17235684394836426, 0.6515157222747803, 0.1027381420135498, 0.13431453704833984], "transcript": "ARIES P ROSAL", "prompt": null}
+{"ts": 1768441958.3563297, "type": "blink_recorded", "blink_duration_sec": 0.2601199150085449}
+{"ts": 1768441959.378718, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.2601199150085449], "transcript": "ARIES P ROSALE", "prompt": null}
+{"ts": 1768441960.1299787, "type": "blink_recorded", "blink_duration_sec": 0.13832831382751465}
+{"ts": 1768441960.4717505, "type": "blink_recorded", "blink_duration_sec": 0.10322356224060059}
+{"ts": 1768441960.743423, "type": "blink_recorded", "blink_duration_sec": 0.1353287696838379}
+{"ts": 1768441961.7679286, "type": "token_committed", "mode": "CHAR", "token": "S", "blink_sequence_sec": [0.13832831382751465, 0.10322356224060059, 0.1353287696838379], "transcript": "ARIES P ROSALES", "prompt": null}
+{"ts": 1768441965.7897372, "type": "word_boundary_commit", "word": "ROSALES", "mode": "CHAR", "transcript": "ARIES P ROSALES", "prompt": null}
+{"ts": 1768441967.4282928, "type": "blink_recorded", "blink_duration_sec": 0.13683533668518066}
+{"ts": 1768441967.7681105, "type": "blink_recorded", "blink_duration_sec": 0.10023903846740723}
+{"ts": 1768441968.7925098, "type": "blink_recorded", "blink_duration_sec": 0.6139640808105469}
+{"ts": 1768441969.8164823, "type": "token_committed", "mode": "CHAR", "token": "U", "blink_sequence_sec": [0.13683533668518066, 0.10023903846740723, 0.6139640808105469], "transcript": "ARIES P ROSALES U", "prompt": null}
+{"ts": 1768441973.8394194, "type": "word_boundary_commit", "word": "U", "mode": "CHAR", "transcript": "ARIES P ROSALES U", "prompt": null}
+{"ts": 1768441975.1702518, "type": "blink_recorded", "blink_duration_sec": 0.1694495677947998}
+{"ts": 1768441976.1937382, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.1694495677947998], "transcript": "ARIES P ROSALES U E", "prompt": null}
+{"ts": 1768441980.208829, "type": "word_boundary_commit", "word": "E", "mode": "CHAR", "transcript": "ARIES P ROSALES U E", "prompt": null}
+{"ts": 1768441984.106089, "type": "blink_recorded", "blink_duration_sec": 1.945084810256958}
+{"ts": 1768441984.6840787, "type": "blink_recorded", "blink_duration_sec": 0.1589219570159912}
+{"ts": 1768441988.0282784, "type": "blink_recorded", "blink_duration_sec": 0.24102544784545898}
+{"ts": 1768441989.0542102, "type": "token_committed", "mode": "CHAR", "token": "D", "blink_sequence_sec": [1.945084810256958, 0.1589219570159912, 0.24102544784545898], "transcript": "ARIES P ROSALES U E D", "prompt": null}
+{"ts": 1768441992.2262352, "type": "blink_recorded", "blink_duration_sec": 0.153855562210083}
+{"ts": 1768441993.1103954, "type": "blink_recorded", "blink_duration_sec": 0.4365382194519043}
+{"ts": 1768441993.9966154, "type": "blink_recorded", "blink_duration_sec": 0.40700674057006836}
+{"ts": 1768441994.7143717, "type": "blink_recorded", "blink_duration_sec": 0.581925630569458}
+{"ts": 1768441995.464669, "type": "blink_recorded", "blink_duration_sec": 0.5092198848724365}
+{"ts": 1768441996.7261882, "type": "blink_recorded", "blink_duration_sec": 0.7858700752258301}
+{"ts": 1768441997.1342392, "type": "blink_recorded", "blink_duration_sec": 0.27367734909057617}
+{"ts": 1768441998.1391277, "type": "token_committed", "mode": "CHAR", "token": "@", "blink_sequence_sec": [0.153855562210083, 0.4365382194519043, 0.40700674057006836, 0.581925630569458, 0.5092198848724365, 0.7858700752258301, 0.27367734909057617], "transcript": "ARIES P ROSALES U E D@", "prompt": null}
+{"ts": 1768441999.794234, "type": "blink_recorded", "blink_duration_sec": 0.0696558952331543}
+{"ts": 1768442000.2368276, "type": "blink_recorded", "blink_duration_sec": 0.0686647891998291}
+{"ts": 1768442001.260842, "type": "token_committed", "mode": "CHAR", "token": "I", "blink_sequence_sec": [0.0696558952331543, 0.0686647891998291], "transcript": "ARIES P ROSALES U E D@I", "prompt": null}
+{"ts": 1768442002.3891985, "type": "blink_recorded", "blink_duration_sec": 0.4135267734527588}
+{"ts": 1768442002.7290301, "type": "blink_recorded", "blink_duration_sec": 0.17041468620300293}
+{"ts": 1768442003.1380355, "type": "blink_recorded", "blink_duration_sec": 0.23957467079162598}
+{"ts": 1768442003.6883888, "type": "blink_recorded", "blink_duration_sec": 0.1398487091064453}
+{"ts": 1768442005.0120788, "type": "token_committed", "mode": "CHAR", "token": "H", "blink_sequence_sec": [0.4135267734527588, 0.17041468620300293, 0.23957467079162598, 0.1398487091064453], "transcript": "ARIES P ROSALES U E D@IH", "prompt": null}
+{"ts": 1768442009.037169, "type": "word_boundary_commit", "word": "D@IH", "mode": "CHAR", "transcript": "ARIES P ROSALES U E D@IH", "prompt": null}
+{"ts": 1768442011.900866, "type": "blink_recorded", "blink_duration_sec": 0.777289867401123}
+{"ts": 1768442013.4018285, "type": "token_committed", "mode": "CHAR", "token": "T", "blink_sequence_sec": [0.777289867401123], "transcript": "ARIES P ROSALES U E D@IH T", "prompt": null}
+{"ts": 1768442015.1084042, "type": "blink_recorded", "blink_duration_sec": 0.13682293891906738}
+{"ts": 1768442015.7900229, "type": "blink_recorded", "blink_duration_sec": 0.1232903003692627}
+{"ts": 1768442017.0756366, "type": "blink_recorded", "blink_duration_sec": 0.3263695240020752}
+{"ts": 1768442018.7224975, "type": "token_committed", "mode": "CHAR", "token": "S", "blink_sequence_sec": [0.13682293891906738, 0.1232903003692627, 0.3263695240020752], "transcript": "ARIES P ROSALES U E D@IH TS", "prompt": null}
+{"ts": 1768442020.2596595, "type": "blink_recorded", "blink_duration_sec": 0.44306182861328125}
+{"ts": 1768442020.9418263, "type": "blink_recorded", "blink_duration_sec": 0.510261058807373}
+{"ts": 1768442021.2495642, "type": "blink_recorded", "blink_duration_sec": 0.06868100166320801}
+{"ts": 1768442021.5196745, "type": "blink_recorded", "blink_duration_sec": 0.05513501167297363}
+{"ts": 1768442021.7933109, "type": "blink_recorded", "blink_duration_sec": 0.07119250297546387}
+{"ts": 1768442022.826712, "type": "token_committed", "mode": "CHAR", "token": "5", "blink_sequence_sec": [0.44306182861328125, 0.510261058807373, 0.06868100166320801, 0.05513501167297363, 0.07119250297546387], "transcript": "ARIES P ROSALES U E D@IH TS5", "prompt": null}
+{"ts": 1768442026.8416777, "type": "word_boundary_commit", "word": "TS5", "mode": "CHAR", "transcript": "ARIES P ROSALES U E D@IH TS5", "prompt": null}
