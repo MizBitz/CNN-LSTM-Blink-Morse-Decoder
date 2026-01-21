@@ -1280,6 +1280,13 @@ def main():
         
         key = cv2.waitKey(1) & 0xFF
         if key == ord('q'): break
+
+        # Allow ESC to close the Library overlay even when not editing
+        if key == 27 and show_word_commands:
+            show_word_commands = False
+            editing_active = False
+            selected_command_idx = None
+            continue
         
         # Typing logic
         if editing_active and show_word_commands:
