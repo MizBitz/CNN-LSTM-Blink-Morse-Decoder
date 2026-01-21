@@ -126,6 +126,9 @@ speech_queue = queue.Queue()
 # - BEEP: play short/long beeps matching Morse input (dot/dash)
 current_audio_mode = "TTS"  # "TTS" | "MUTE" | "BEEP"
 
+# TTS speed (SAPI Rate range is roughly -10..10; positive is faster)
+TTS_RATE = 4
+
 # Morse beep settings (Windows)
 BEEP_FREQ_HZ = 880
 DOT_BEEP_MS = 120
@@ -161,6 +164,11 @@ def speech_worker():
     try:
         # Initialize the native Windows voice engine directly
         speaker = win32com.client.Dispatch("SAPI.SpVoice")
+        # Speed up speech for words, letters, and dot/dash cues
+        try:
+            speaker.Rate = TTS_RATE
+        except Exception:
+            pass
     except Exception as e:
         print(f"SAPI Initialization Error: {e}")
         return
