@@ -10,8 +10,8 @@ import os
 # ==========================================
 #           CONFIGURATION
 # ==========================================
-DATA_DIR = r"S:\VSCode Projects\MediaFace\dataset_dynamic_aligned"
-BATCH_SIZE = 32
+DATA_DIR = r"S:\VSCode Projects\Backup Code\DATASET FINAL\DATASET FINAL\training_dataset"
+BATCH_SIZE = 64
 EPOCHS = 20  # Enough to show convergence
 LR = 0.001
 
@@ -119,6 +119,12 @@ def main():
     #           PLOTTING
     # ==========================================
     print("\nPlotting results...")
+    plt.rcParams.update({
+        "font.size": 14,        # tick labels
+        "axes.titlesize": 16,   # title
+        "axes.labelsize": 14,   # x/y labels
+        "legend.fontsize": 12,  # legend
+    })
     plt.figure(figsize=(10, 6))
     
     # Plot Lines

@@ -7,13 +7,18 @@ import matplotlib.pyplot as plt
 
 # ================= CONFIGURATION =================
 # UPDATE THIS PATH to your dataset folder
-DATASET_ROOT = r"S:\VSCode Projects\MediaFace\training_dataset"
+DATASET_ROOT = r"S:\VSCode Projects\Backup Code\MEAD Dataset"
 
 # BLUR THRESHOLD (The "Sharpness" Line)
 # Higher = Stricter (Deletes more)
 # Lower = Lenient (Keeps more)
 # Start at 50.0. If it deletes too many good images, lower it to 30.0.
-BLUR_THRESHOLD = 65.0 
+BLUR_THRESHOLD = 45.0 
+# ================= FONTS =================
+FONT_FAMILY = "Courier New"
+FONT_SIZE_SUPTITLE = 18
+FONT_SIZE_PANEL_TITLE = 24
+FONT_SIZE_SCORE_LABEL = 24
 # =================================================
 
 def calculate_blur_score(image):
@@ -28,7 +33,7 @@ def calculate_blur_score(image):
 
 def show_comparison_grid(bad_files, good_files, folder_name):
     """
-    Displays the 5x5 Review Grid.
+    Displays the 4x4 Review Grid.
     Filters to show ONLY Left (_L) and Right (_R) eye crops.
     """
     # 1. FILTER: Only show L and R images (Ignore "combined" or others)
@@ -40,17 +45,23 @@ def show_comparison_grid(bad_files, good_files, folder_name):
     if not vis_bad: vis_bad = bad_files
     if not vis_good: vis_good = good_files
 
-    n_show = 25
+    n_show = 16
     bad_sample = random.sample(vis_bad, min(len(vis_bad), n_show))
     good_sample = random.sample(vis_good, min(len(vis_good), n_show))
 
-    fig = plt.figure(figsize=(16, 9)) # Wider 16:9 Aspect Ratio
-    fig.suptitle(f"REVIEW: {folder_name} (Threshold: {BLUR_THRESHOLD})", fontsize=16, fontweight='bold')
+    plt.rcParams.update({"font.family": FONT_FAMILY})
+
+    fig = plt.figure(figsize=(14, 8)) # Slightly smaller now that grid is 4x4
+    fig.suptitle(
+        f"REVIEW: {folder_name} (Threshold: {BLUR_THRESHOLD})",
+        fontsize=FONT_SIZE_SUPTITLE,
+        fontweight='bold',
+    )
 
     # Create subplots
-    gs = fig.add_gridspec(1, 2, width_ratios=[1, 1], wspace=0.1)
-    keep_grid = gs[0].subgridspec(5, 5, hspace=0.6, wspace=0.3) # Added hspace for text
-    delete_grid = gs[1].subgridspec(5, 5, hspace=0.6, wspace=0.3)
+    gs = fig.add_gridspec(1, 2, width_ratios=[1, 1], wspace=0.15)
+    keep_grid = gs[0].subgridspec(4, 4, hspace=0.7, wspace=0.6)
+    delete_grid = gs[1].subgridspec(4, 4, hspace=0.7, wspace=0.6)
 
     # --- LEFT PANEL: SHARP IMAGES (KEEP) ---
     for i, file_path in enumerate(good_sample):
@@ -58,7 +69,7 @@ def show_comparison_grid(bad_files, good_files, folder_name):
         if img is None: continue
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         
-        row, col = divmod(i, 5)
+        row, col = divmod(i, 4)
         ax = fig.add_subplot(keep_grid[row, col])
         ax.imshow(img)
         ax.set_xticks([])
@@ -66,7 +77,12 @@ def show_comparison_grid(bad_files, good_files, folder_name):
         
         # Clean Title (Only on the first item to save space)
         if i == 0:
-            ax.set_title("KEEP (Sharp)", color='green', fontsize=14, pad=10)
+            ax.set_title(
+                "KEEP (Sharp)",
+                color='green',
+                fontsize=FONT_SIZE_PANEL_TITLE,
+                pad=10,
+            )
 
     # --- RIGHT PANEL: BLURRY IMAGES (MOVE) ---
     for i, item in enumerate(bad_sample):
@@ -75,22 +91,37 @@ def show_comparison_grid(bad_files, good_files, folder_name):
         if img is None: continue
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         
-        row, col = divmod(i, 5)
+        row, col = divmod(i, 4)
         ax = fig.add_subplot(delete_grid[row, col])
         ax.imshow(img)
         ax.set_xticks([])
         ax.set_yticks([])
         
-        # Move Score to BOTTOM (xlabel) to prevent overlap
-        ax.set_xlabel(f"Score: {int(score)}", color='red', fontsize=10)
+        # Place score below the axis using axes coordinates to avoid overlap even at large fonts
+        ax.text(
+            0.5,
+            -0.16,
+            f"Score:\n{int(score)}",
+            color='red',
+            fontsize=FONT_SIZE_SCORE_LABEL,
+            ha='center',
+            va='top',
+            transform=ax.transAxes,
+            linespacing=1.1,
+        )
         
         if i == 0:
-            ax.set_title(f"MOVE (< {BLUR_THRESHOLD})", color='red', fontsize=14, pad=10)
+            ax.set_title(
+                f"MOVE (< {BLUR_THRESHOLD})",
+                color='red',
+                fontsize=FONT_SIZE_PANEL_TITLE,
+                pad=10,
+            )
 
     print(f"Displaying sample for {folder_name}... (Close window to proceed)")
     
-    # Adjust layout to make room for headers
-    plt.subplots_adjust(top=0.85, bottom=0.05)
+    # Adjust layout to make room for headers and score labels below axes
+    plt.subplots_adjust(top=0.86, bottom=0.16)
     plt.show()
 
 def scan_and_clean_blur(folder_path):

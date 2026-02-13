@@ -7,8 +7,11 @@ import matplotlib.pyplot as plt
 # ==========================================
 #           CONFIGURATION
 # ==========================================
-DATASET_DIR = r"S:\VSCode Projects\MediaFace\dataset_dynamic_aligned"  # Your dataset folder
+DATASET_DIR = r"S:\VSCode Projects\Backup Code\DATASET FINAL\DATASET FINAL\training_dataset"  # Your dataset folder
 EXTENSIONS = ["*.jpg", "*.png", "*.jpeg"]
+FONT_FAMILY = "Courier New"
+FONT_SIZE = 32  # base size for axes/labels; adjust as desired
+THRESHOLD_LABEL_FONT_SIZE = 24  # keep the blur-threshold label fixed
 
 def calculate_sharpness_scores(root_dir):
     sharpness_scores = []
@@ -51,35 +54,27 @@ def main():
         print("No images found.")
         return
 
+    # Apply font configuration globally for the plot
+    plt.rcParams.update({
+        "font.family": FONT_FAMILY,
+        "font.size": FONT_SIZE,
+    })
+
 # ==========================================
     #           VISUALIZATION
     # ==========================================
-    plt.figure(figsize=(14, 6)) # Made it wider to fit the numbers
+    plt.figure(figsize=(8, 6))
+    plt.boxplot(scores, vert=True, patch_artist=True, showfliers=False,
+                boxprops=dict(facecolor="lightblue"))
+    plt.xticks([1], ["Dataset Images"])
+    plt.title("Distribution of Image Sharpness", fontsize=FONT_SIZE + 2)
+    plt.ylabel("Laplacian Variance Score")
+    plt.grid(axis='y', alpha=0.3)
+    plt.gca().tick_params(axis="both", labelsize=FONT_SIZE)
     
-    # 1. Calculate the range for your ticks
-    max_val = int(np.max(scores))
-    # Create a list of numbers from 0 to max_val, stepping by 50
-    # We add 51 to ensure the last number is included
-    x_ticks = np.arange(0, max_val + 50, 50) 
-    
-    # 2. Plot Histogram
-    # 'bins' controls the bars. We set it to match your 50-step desire roughly,
-    # or you can use a fixed number like 100 for high detail.
-    plt.hist(scores, bins=100, color='purple', alpha=0.7, edgecolor='black')
-    
-    # 3. Apply the custom X-axis ticks
-    plt.xticks(x_ticks, rotation=45) # Rotate text so they don't overlap
-    
-    plt.title("Image Sharpness Distribution (Laplacian Variance)")
-    plt.xlabel("Sharpness Score (Variance)")
-    plt.ylabel("Number of Images")
-    
-    # Add a reference line for "Blurry" (Common threshold is 45)
-    plt.axvline(x=45, color='red', linestyle='dashed', linewidth=2, label='Blur Threshold (45)')
-    plt.legend()
-    
-    plt.grid(axis='both', alpha=0.3) # Grid on both X and Y helps read values
-    plt.tight_layout() # Fixes layout if numbers get cut off
+    # Add the threshold line for context
+    plt.axhline(y=45, color='red', linestyle='--', label='Blur Threshold (45)')
+    plt.legend(fontsize=THRESHOLD_LABEL_FONT_SIZE)
     plt.show()
 
     # ==========================================

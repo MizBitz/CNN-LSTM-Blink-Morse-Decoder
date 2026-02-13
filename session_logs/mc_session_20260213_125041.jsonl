@@ -1,0 +1,19 @@
+{"ts": 1770958244.9776495, "type": "blink_recorded", "blink_duration_sec": 0.13608694076538086}
+{"ts": 1770958245.9336014, "type": "blink_recorded", "blink_duration_sec": 0.44226861000061035}
+{"ts": 1770958246.9576256, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.13608694076538086, 0.44226861000061035], "transcript": "Units Needed", "prompt": null}
+{"ts": 1770958250.1948102, "type": "blink_recorded", "blink_duration_sec": 0.1359407901763916}
+{"ts": 1770958251.322632, "type": "blink_recorded", "blink_duration_sec": 0.13660693168640137}
+{"ts": 1770958252.5501773, "type": "blink_recorded", "blink_duration_sec": 0.12757468223571777}
+{"ts": 1770958253.0276453, "type": "blink_recorded", "blink_duration_sec": 0.13569164276123047}
+{"ts": 1770958253.4395342, "type": "blink_recorded", "blink_duration_sec": 0.06831932067871094}
+{"ts": 1770958254.4615932, "type": "blink_recorded", "blink_duration_sec": 0.13367319107055664}
+{"ts": 1770958256.2675982, "type": "blink_recorded", "blink_duration_sec": 0.06842803955078125}
+{"ts": 1770958257.289394, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.06842803955078125], "transcript": "Test", "prompt": null}
+{"ts": 1770958260.6713805, "type": "blink_recorded", "blink_duration_sec": 0.06801438331604004}
+{"ts": 1770958261.693304, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.06801438331604004], "transcript": "Test", "prompt": null}
+{"ts": 1770958270.4937367, "type": "blink_recorded", "blink_duration_sec": 0.1702578067779541}
+{"ts": 1770958271.3091106, "type": "blink_recorded", "blink_duration_sec": 0.5105516910552979}
+{"ts": 1770958272.329901, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.1702578067779541, 0.5105516910552979], "transcript": "A", "prompt": null}
+{"ts": 1770958274.8552487, "type": "blink_recorded", "blink_duration_sec": 0.06792330741882324}
+{"ts": 1770958276.0860503, "type": "blink_recorded", "blink_duration_sec": 0.4794576168060303}
+{"ts": 1770958277.1053646, "type": "token_committed", "mode": "CHAR", "token": "I", "blink_sequence_sec": [0.06792330741882324, 0.4794576168060303], "transcript": "I", "prompt": null}

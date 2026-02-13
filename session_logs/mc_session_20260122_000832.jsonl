@@ -1,0 +1,58 @@
+{"ts": 1769011716.0410817, "type": "blink_recorded", "blink_duration_sec": 0.1256425380706787}
+{"ts": 1769011717.0414355, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.1256425380706787], "transcript": "Test", "prompt": null}
+{"ts": 1769011724.0115104, "type": "blink_recorded", "blink_duration_sec": 0.2212660312652588}
+{"ts": 1769011725.0488944, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.2212660312652588], "transcript": "Test", "prompt": null}
+{"ts": 1769011727.9878469, "type": "blink_recorded", "blink_duration_sec": 0.2022995948791504}
+{"ts": 1769011729.009639, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.2022995948791504], "transcript": "Test", "prompt": null}
+{"ts": 1769011730.8400843, "type": "blink_recorded", "blink_duration_sec": 0.29990148544311523}
+{"ts": 1769011731.8454657, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.29990148544311523], "transcript": "Test", "prompt": null}
+{"ts": 1769011734.2458441, "type": "blink_recorded", "blink_duration_sec": 0.24533581733703613}
+{"ts": 1769011738.120576, "type": "blink_recorded", "blink_duration_sec": 0.16769814491271973}
+{"ts": 1769011740.0385926, "type": "blink_recorded", "blink_duration_sec": 0.7544727325439453}
+{"ts": 1769011740.5492883, "type": "blink_recorded", "blink_duration_sec": 0.16972565650939941}
+{"ts": 1769011740.9188526, "type": "blink_recorded", "blink_duration_sec": 0.0570681095123291}
+{"ts": 1769011742.1246872, "type": "blink_recorded", "blink_duration_sec": 0.22244930267333984}
+{"ts": 1769011742.7209866, "type": "blink_recorded", "blink_duration_sec": 0.43759894371032715}
+{"ts": 1769011744.6787045, "type": "token_committed", "mode": "WORD", "token": "Evil Mojo Threw so Hard", "blink_sequence_sec": [0.24533581733703613, 0.16769814491271973, 0.7544727325439453, 0.16972565650939941, 0.0570681095123291, 0.22244930267333984, 0.43759894371032715], "transcript": "Evil Mojo Threw so Hard", "prompt": null}
+{"ts": 1769011746.8504963, "type": "blink_recorded", "blink_duration_sec": 0.21025300025939941}
+{"ts": 1769011747.8727138, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.21025300025939941], "transcript": "Evil Mojo Threw so Hard Test", "prompt": null}
+{"ts": 1769011749.108879, "type": "blink_recorded", "blink_duration_sec": 0.06041765213012695}
+{"ts": 1769011750.1125216, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.06041765213012695], "transcript": "Test", "prompt": null}
+{"ts": 1769011755.9207897, "type": "blink_recorded", "blink_duration_sec": 0.11316442489624023}
+{"ts": 1769011756.9408236, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.11316442489624023], "transcript": "Test", "prompt": null}
+{"ts": 1769011759.264403, "type": "blink_recorded", "blink_duration_sec": 0.4250495433807373}
+{"ts": 1769011760.2717664, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.4250495433807373], "transcript": "Test", "prompt": null}
+{"ts": 1769011766.3924608, "type": "blink_recorded", "blink_duration_sec": 0.053571224212646484}
+{"ts": 1769011767.41583, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.053571224212646484], "transcript": "Test", "prompt": null}
+{"ts": 1769011772.5262249, "type": "gesture_speak_sentence", "blink_duration_sec": 2.693882703781128, "mode": "WORD", "transcript": "", "prompt": null}
+{"ts": 1769011775.5489523, "type": "gesture_speak_sentence", "blink_duration_sec": 2.000250816345215, "mode": "WORD", "transcript": "", "prompt": null}
+{"ts": 1769011778.98237, "type": "gesture_speak_sentence", "blink_duration_sec": 2.5575153827667236, "mode": "WORD", "transcript": "", "prompt": null}
+{"ts": 1769011779.4524753, "type": "blink_recorded", "blink_duration_sec": 0.12792301177978516}
+{"ts": 1769011780.0483844, "type": "blink_recorded", "blink_duration_sec": 0.3500967025756836}
+{"ts": 1769011782.1485078, "type": "blink_recorded", "blink_duration_sec": 1.532203197479248}
+{"ts": 1769011784.0489032, "type": "blink_recorded", "blink_duration_sec": 0.8618581295013428}
+{"ts": 1769011785.2186642, "type": "token_committed", "mode": "WORD", "token": "Help Quick", "blink_sequence_sec": [0.12792301177978516, 0.3500967025756836, 1.532203197479248, 0.8618581295013428], "transcript": "Help Quick", "prompt": null}
+{"ts": 1769011799.392115, "type": "blink_recorded", "blink_duration_sec": 0.053980350494384766}
+{"ts": 1769011800.4161956, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.053980350494384766], "transcript": "Test", "prompt": null}
+{"ts": 1769011809.912601, "type": "blink_recorded", "blink_duration_sec": 0.07458925247192383}
+{"ts": 1769011812.6205268, "type": "blink_recorded", "blink_duration_sec": 0.17219185829162598}
+{"ts": 1769011813.659883, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.17219185829162598], "transcript": "Test", "prompt": null}
+{"ts": 1769011815.590829, "type": "blink_recorded", "blink_duration_sec": 0.20673775672912598}
+{"ts": 1769011816.604695, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.20673775672912598], "transcript": "Test", "prompt": null}
+{"ts": 1769011826.0470579, "type": "blink_recorded", "blink_duration_sec": 0.28185224533081055}
+{"ts": 1769011827.0563607, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.28185224533081055], "transcript": "Test", "prompt": null}
+{"ts": 1769011829.1556613, "type": "blink_recorded", "blink_duration_sec": 0.18024230003356934}
+{"ts": 1769011830.2220476, "type": "blink_recorded", "blink_duration_sec": 0.6788673400878906}
+{"ts": 1769011835.0727954, "type": "blink_recorded", "blink_duration_sec": 0.22330093383789062}
+{"ts": 1769011836.0790782, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.22330093383789062], "transcript": "Test", "prompt": null}
+{"ts": 1769011847.2824292, "type": "blink_recorded", "blink_duration_sec": 0.22430777549743652}
+{"ts": 1769011848.317339, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.22430777549743652], "transcript": "Test", "prompt": null}
+{"ts": 1769011859.7718496, "type": "blink_recorded", "blink_duration_sec": 0.20028233528137207}
+{"ts": 1769011861.047079, "type": "blink_recorded", "blink_duration_sec": 0.37352943420410156}
+{"ts": 1769011862.055504, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.20028233528137207, 0.37352943420410156], "transcript": "Test Units Needed", "prompt": null}
+{"ts": 1769011864.0136862, "type": "blink_recorded", "blink_duration_sec": 0.13418340682983398}
+{"ts": 1769011864.7791567, "type": "blink_recorded", "blink_duration_sec": 0.05306410789489746}
+{"ts": 1769011865.8170261, "type": "token_committed", "mode": "WORD", "token": "Units Needed", "blink_sequence_sec": [0.13418340682983398, 0.05306410789489746], "transcript": "Test Units Needed", "prompt": null}
+{"ts": 1769011869.2501965, "type": "blink_recorded", "blink_duration_sec": 0.1561870574951172}
+{"ts": 1769011870.5969121, "type": "blink_recorded", "blink_duration_sec": 0.7124032974243164}
+{"ts": 1769011871.607297, "type": "token_committed", "mode": "WORD", "token": "Assignment Completed", "blink_sequence_sec": [0.1561870574951172, 0.7124032974243164], "transcript": "Assignment Completed", "prompt": null}

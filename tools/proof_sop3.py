@@ -1,80 +1,79 @@
 import time
-import torch
-import torch.nn as nn
+import os
 import matplotlib.pyplot as plt
 import numpy as np
+import onnxruntime as ort
 
 # ==========================================
-#      1. DEFINE MODEL (Standalone Safety)
+#           FONT CONFIGURATION
 # ==========================================
-# Redefining here to prevent accidental training loops from imports
-class EyeStateCNN(nn.Module):
-    def __init__(self):
-        super(EyeStateCNN, self).__init__()
-        self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
-        self.relu1 = nn.ReLU()
-        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2) 
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
-        self.relu2 = nn.ReLU()
-        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2) 
-        self.conv3 = nn.Conv2d(64, 128, kernel_size=3, padding=1)
-        self.relu3 = nn.ReLU()
-        self.pool3 = nn.MaxPool2d(kernel_size=2, stride=2) 
-        self.flatten = nn.Flatten()
-        self.fc1 = nn.Linear(128 * 8 * 8, 512) 
-        self.relu4 = nn.ReLU()
-        self.dropout = nn.Dropout(0.5) 
-        self.fc2 = nn.Linear(512, 2) 
-
-    def forward(self, x):
-        x = self.pool1(self.relu1(self.conv1(x)))
-        x = self.pool2(self.relu2(self.conv2(x)))
-        x = self.pool3(self.relu3(self.conv3(x)))
-        x = self.flatten(x)
-        x = self.relu4(self.fc1(x))
-        x = self.dropout(x)
-        x = self.fc2(x)
-        return x
+FONT_FAMILY = "Courier New"
+FONT_SIZE_TITLE = 12
+FONT_SIZE_AXIS_LABEL = 28
+FONT_SIZE_TICK = 28
+FONT_SIZE_LEGEND = 28
+FONT_SIZE_ANNOTATION = 28
 
 def main():
-    # 1. Load Model
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Testing Latency on: {device}")
+    # ==========================================
+    #           1. SETUP & LOADING
+    # ==========================================
+    # Apply font family globally
+    plt.rcParams.update({
+        "font.family": FONT_FAMILY,
+    })
+    onnx_path = "eye_state_mobilenet.onnx"
     
-    model = EyeStateCNN().to(device)
-    model.eval()
+    if not os.path.exists(onnx_path):
+        print(f"Error: Model file '{onnx_path}' not found.")
+        return
 
-    # 2. Create Dummy Input (1 Frame, Grayscale, 64x64)
-    dummy_input = torch.randn(1, 1, 64, 64).to(device)
+    print(f"Loading ONNX model: {onnx_path}")
 
-    # 3. Warmup (Wake up the GPU/CPU)
+    # Prefer GPU if available, fall back to CPU
+    providers = ["CUDAExecutionProvider", "CPUExecutionProvider"]
+    try:
+        sess = ort.InferenceSession(onnx_path, providers=providers)
+    except Exception as e:
+        print(f"Error loading model: {e}")
+        return
+
+    # Inspect input to build the right dummy tensor
+    inp = sess.get_inputs()[0]
+    input_name = inp.name
+    raw_shape = inp.shape
+
+    # Replace dynamic dims (None or 'batch' strings) with 1 for benchmarking
+    shape = [1 if (isinstance(d, str) or d is None) else d for d in raw_shape]
+    
+    # Create random dummy data of the correct shape (float32)
+    dummy_input = np.random.randn(*shape).astype(np.float32)
+
+    # ==========================================
+    #           2. WARMUP
+    # ==========================================
+    # Wake up the execution provider so the first run isn't slow
     print("Warming up...")
     for _ in range(50):
-        with torch.no_grad():
-            _ = model(dummy_input)
+        _ = sess.run(None, {input_name: dummy_input})
 
-    # 4. Benchmark Loop
+    # ==========================================
+    #           3. BENCHMARK LOOP
+    # ==========================================
     latencies = []
     iterations = 1000
     print(f"Running {iterations} inference tests...")
 
-    with torch.no_grad():
-        for _ in range(iterations):
-            # Start Timer
-            if device.type == 'cuda': torch.cuda.synchronize()
-            start = time.perf_counter()
-            
-            # INFERENCE
-            _ = model(dummy_input)
-            
-            # Stop Timer
-            if device.type == 'cuda': torch.cuda.synchronize()
-            end = time.perf_counter()
-            
-            # Convert to milliseconds
-            latencies.append((end - start) * 1000)
+    for _ in range(iterations):
+        start = time.perf_counter()
+        _ = sess.run(None, {input_name: dummy_input})
+        end = time.perf_counter()
+        # Convert seconds to milliseconds
+        latencies.append((end - start) * 1000)
 
-    # 5. Statistics
+    # ==========================================
+    #           4. STATISTICS
+    # ==========================================
     avg_lat = np.mean(latencies)
     min_lat = np.min(latencies)
     max_lat = np.max(latencies)
@@ -87,24 +86,66 @@ def main():
     print(f"Min Latency:     {min_lat:.4f} ms")
     print(f"Max Latency:     {max_lat:.4f} ms")
     print(f"99% Percentile:  {p99_lat:.4f} ms")
+    print(f"Input shape used: {shape}")
 
-    # 6. Plot Histogram
-    plt.figure(figsize=(10, 6))
-    plt.hist(latencies, bins=50, color='#1f77b4', edgecolor='black', alpha=0.7)
+    # ==========================================
+    #           5. VISUALIZATION (ZOOMED)
+    # ==========================================
+    plt.figure(figsize=(10, 5))
     
-    # Add Reference Lines
+    # Create the boxplot
+    # showfliers=False hides the extreme "background task" spikes
+    plt.boxplot(
+        latencies,
+        vert=False,
+        patch_artist=True,
+        showfliers=False, 
+        boxprops=dict(facecolor="#aec7e8", edgecolor="#1f77b4"),
+        medianprops=dict(color="#d62728", linewidth=2),
+    )
+
+    # Add Average Line
     plt.axvline(avg_lat, color='red', linestyle='dashed', linewidth=2, label=f'Avg Speed: {avg_lat:.2f}ms')
-    plt.axvline(33.33, color='green', linestyle='solid', linewidth=3, label='Real-Time Limit (33ms)')
     
-    plt.title("SOP 3: System Inference Latency Distribution")
-    plt.xlabel("Processing Time per Frame (ms)")
-    plt.ylabel("Frequency")
-    plt.legend()
-    plt.grid(axis='y', alpha=0.3)
+    # --- DYNAMIC ZOOM LOGIC ---
+    # Set the view limit based on the data, NOT the 33ms limit.
+    # We look at the 99th percentile (approx 0.5-0.8ms) and give it some breathing room.
+    # If p99 is 0.5ms, the graph will show up to ~0.75ms.
+    view_limit = p99_lat * 1.5  
+    plt.xlim(0, view_limit)
+
+    # Add the "Off-Screen" Indicator for the 33ms limit
+    # This draws an arrow pointing right to show the limit is way off the chart
+    plt.text(
+        view_limit * 0.95,  # X position (far right of the view)
+        1.3,                # Y position (slightly above the box)
+        "Real-Time Limit (33ms) →", 
+        color='green', 
+        fontweight='bold', 
+        fontsize=FONT_SIZE_ANNOTATION,
+        ha='right'          # Align text to the right
+    )
+
+    # Dynamic Title
+    speedup = 33.33 / avg_lat
+    plt.title(
+        f"SOP 3: System Inference Latency\n(Model is {speedup:.0f}x faster than real-time requirement!)",
+        fontsize=FONT_SIZE_TITLE,
+    )
+    plt.xlabel("Processing Time (ms)", fontsize=FONT_SIZE_AXIS_LABEL)
+    plt.tick_params(axis='x', labelsize=FONT_SIZE_TICK)
     
-    save_path = "SOP3_Latency_Histogram.png"
+    # Label the Y-axis clearly
+    plt.yticks([1], [""], fontsize=FONT_SIZE_TICK) 
+    
+    plt.legend(loc="lower right", fontsize=FONT_SIZE_LEGEND)
+    plt.grid(axis='x', alpha=0.3)
+    plt.tight_layout()
+
+    save_path = "SOP3_Latency_Zoomed.png"
     plt.savefig(save_path)
     print(f"\nGraph saved to {save_path}")
+    plt.show()
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from torchvision import datasets, transforms
+from torchvision import datasets, transforms, models
 from torch.utils.data import DataLoader
 from sklearn.metrics import classification_report, confusion_matrix
 import seaborn as sns
@@ -10,51 +10,25 @@ import numpy as np
 # ==========================================
 #           CONFIGURATION
 # ==========================================
-MODEL_PATH = "eye_state_mobilenet.onnx"
+MODEL_PATH = "eye_state_cnn.pth"
 DATA_DIR = r"S:\VSCode Projects\Backup Code\cleaned_cnn_dataset"  # Ensure this points to your dataset folder
-BATCH_SIZE = 32
+BATCH_SIZE = 64
 IMAGE_SIZE = (64, 64)
 
-# ==========================================
-#      1. DEFINE MODEL CLASS (STANDALONE)
-# ==========================================
-# We define this here to avoid importing 'train_cnn.py', 
-# which would accidentally trigger a re-training loop.
-class EyeStateCNN(nn.Module):
-    def __init__(self):
-        super(EyeStateCNN, self).__init__()
-        
-        # Convolutional Block 1
-        self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
-        self.relu1 = nn.ReLU()
-        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2) 
+def get_model():
+    """MobileNetV3-Small configured the same way as training (grayscale + binary head)."""
+    model = models.mobilenet_v3_small(weights=models.MobileNet_V3_Small_Weights.DEFAULT)
 
-        # Convolutional Block 2
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
-        self.relu2 = nn.ReLU()
-        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2) 
+    # Replace first conv to accept 1 channel; initialize by averaging RGB weights.
+    original_first = model.features[0][0]
+    new_first = nn.Conv2d(1, 16, kernel_size=3, stride=2, padding=1, bias=False)
+    with torch.no_grad():
+        new_first.weight.copy_(original_first.weight.mean(dim=1, keepdim=True))
+    model.features[0][0] = new_first
 
-        # Convolutional Block 3
-        self.conv3 = nn.Conv2d(64, 128, kernel_size=3, padding=1)
-        self.relu3 = nn.ReLU()
-        self.pool3 = nn.MaxPool2d(kernel_size=2, stride=2) 
-
-        # Fully Connected Block
-        self.flatten = nn.Flatten()
-        self.fc1 = nn.Linear(128 * 8 * 8, 512) 
-        self.relu4 = nn.ReLU()
-        self.dropout = nn.Dropout(0.5) 
-        self.fc2 = nn.Linear(512, 2) 
-
-    def forward(self, x):
-        x = self.pool1(self.relu1(self.conv1(x)))
-        x = self.pool2(self.relu2(self.conv2(x)))
-        x = self.pool3(self.relu3(self.conv3(x)))
-        x = self.flatten(x)
-        x = self.relu4(self.fc1(x))
-        x = self.dropout(x)
-        x = self.fc2(x)
-        return x
+    # Binary classifier head outputs a single logit (open vs closed).
+    model.classifier[3] = nn.Linear(1024, 1)
+    return model
 
 # ==========================================
 #           MAIN EXECUTION
@@ -82,10 +56,15 @@ def main():
     
     # 2. Load Model
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = EyeStateCNN().to(device)
+    model = get_model().to(device)
     
     try:
-        model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+        # Prefer safe weight-only loading; fall back for older PyTorch versions.
+        try:
+            state_dict = torch.load(MODEL_PATH, map_location=device, weights_only=True)
+        except TypeError:
+            state_dict = torch.load(MODEL_PATH, map_location=device)
+        model.load_state_dict(state_dict)
         print(f"Successfully loaded {MODEL_PATH}")
     except FileNotFoundError:
         print(f"Error: Could not find {MODEL_PATH}. Make sure it's in the same folder.")
@@ -101,8 +80,8 @@ def main():
     with torch.no_grad():
         for inputs, labels in loader:
             inputs = inputs.to(device)
-            outputs = model(inputs)
-            _, preds = torch.max(outputs, 1)
+            logits = model(inputs).squeeze(1)
+            preds = (logits > 0).long()
             all_preds.extend(preds.cpu().numpy())
             all_labels.extend(labels.numpy())
 

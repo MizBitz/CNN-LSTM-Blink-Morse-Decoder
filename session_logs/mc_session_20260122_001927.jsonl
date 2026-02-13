@@ -1,0 +1,2 @@
+{"ts": 1769012371.2580078, "type": "blink_recorded", "blink_duration_sec": 0.05258655548095703}
+{"ts": 1769012372.2681603, "type": "token_committed", "mode": "WORD", "token": "Test", "blink_sequence_sec": [0.05258655548095703], "transcript": "Test", "prompt": null}

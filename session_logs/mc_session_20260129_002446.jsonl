@@ -1,0 +1,99 @@
+{"ts": 1769617545.654565, "type": "blink_recorded", "blink_duration_sec": 0.13663315773010254}
+{"ts": 1769617546.3036375, "type": "blink_recorded", "blink_duration_sec": 0.13563776016235352}
+{"ts": 1769617547.6371803, "type": "blink_recorded", "blink_duration_sec": 0.5468282699584961}
+{"ts": 1769617558.8561928, "type": "blink_recorded", "blink_duration_sec": 0.08125638961791992}
+{"ts": 1769617561.1071424, "type": "blink_recorded", "blink_duration_sec": 0.10248517990112305}
+{"ts": 1769617569.3951595, "type": "blink_recorded", "blink_duration_sec": 0.09884834289550781}
+{"ts": 1769617570.5434308, "type": "blink_recorded", "blink_duration_sec": 0.5828921794891357}
+{"ts": 1769617571.2669702, "type": "blink_recorded", "blink_duration_sec": 0.17209792137145996}
+{"ts": 1769617571.914822, "type": "blink_recorded", "blink_duration_sec": 0.10272955894470215}
+{"ts": 1769617572.9380531, "type": "token_committed", "mode": "LETTERS", "token": "L", "blink_sequence_sec": [0.09884834289550781, 0.5828921794891357, 0.17209792137145996, 0.10272955894470215], "transcript": "L", "prompt": null}
+{"ts": 1769617577.1725304, "type": "blink_recorded", "blink_duration_sec": 0.13878631591796875}
+{"ts": 1769617578.1613758, "type": "blink_recorded", "blink_duration_sec": 0.5124058723449707}
+{"ts": 1769617578.776754, "type": "blink_recorded", "blink_duration_sec": 0.17305588722229004}
+{"ts": 1769617580.138141, "type": "blink_recorded", "blink_duration_sec": 0.820807933807373}
+{"ts": 1769617580.4121711, "type": "blink_recorded", "blink_duration_sec": 0.1334221363067627}
+{"ts": 1769617581.2549229, "type": "blink_recorded", "blink_duration_sec": 0.37892961502075195}
+{"ts": 1769617583.718921, "type": "blink_recorded", "blink_duration_sec": 0.06719803810119629}
+{"ts": 1769617584.2305617, "type": "blink_recorded", "blink_duration_sec": 0.13534951210021973}
+{"ts": 1769617585.4246817, "type": "blink_recorded", "blink_duration_sec": 0.683974027633667}
+{"ts": 1769617586.4475493, "type": "token_committed", "mode": "LETTERS", "token": "U", "blink_sequence_sec": [0.06719803810119629, 0.13534951210021973, 0.683974027633667], "transcript": "LU", "prompt": null}
+{"ts": 1769617588.492735, "type": "blink_recorded", "blink_duration_sec": 0.16462159156799316}
+{"ts": 1769617589.5168052, "type": "blink_recorded", "blink_duration_sec": 0.546825647354126}
+{"ts": 1769617590.2656925, "type": "blink_recorded", "blink_duration_sec": 0.1709136962890625}
+{"ts": 1769617591.2884595, "type": "token_committed", "mode": "LETTERS", "token": "R", "blink_sequence_sec": [0.16462159156799316, 0.546825647354126, 0.1709136962890625], "transcript": "LR", "prompt": null}
+{"ts": 1769617600.8101807, "type": "blink_recorded", "blink_duration_sec": 0.10484480857849121}
+{"ts": 1769617602.3084407, "type": "blink_recorded", "blink_duration_sec": 0.6482212543487549}
+{"ts": 1769617603.330987, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.10484480857849121, 0.6482212543487549], "transcript": "A", "prompt": null}
+{"ts": 1769617604.6608024, "type": "blink_recorded", "blink_duration_sec": 0.12926411628723145}
+{"ts": 1769617605.6508744, "type": "blink_recorded", "blink_duration_sec": 0.5415763854980469}
+{"ts": 1769617606.1942558, "type": "blink_recorded", "blink_duration_sec": 0.13540387153625488}
+{"ts": 1769617607.2164693, "type": "token_committed", "mode": "CHAR", "token": "R", "blink_sequence_sec": [0.12926411628723145, 0.5415763854980469, 0.13540387153625488], "transcript": "AR", "prompt": null}
+{"ts": 1769617610.1484792, "type": "blink_recorded", "blink_duration_sec": 0.1711866855621338}
+{"ts": 1769617611.1742496, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.1711866855621338], "transcript": "ARE", "prompt": null}
+{"ts": 1769617613.1544774, "type": "blink_recorded", "blink_duration_sec": 0.17026448249816895}
+{"ts": 1769617613.594073, "type": "blink_recorded", "blink_duration_sec": 0.1702442169189453}
+{"ts": 1769617614.6216896, "type": "token_committed", "mode": "CHAR", "token": "I", "blink_sequence_sec": [0.17026448249816895, 0.1702442169189453], "transcript": "ARI", "prompt": null}
+{"ts": 1769617616.1161928, "type": "blink_recorded", "blink_duration_sec": 0.16974520683288574}
+{"ts": 1769617617.1428108, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.16974520683288574], "transcript": "ARIE", "prompt": null}
+{"ts": 1769617617.7895215, "type": "blink_recorded", "blink_duration_sec": 0.21327662467956543}
+{"ts": 1769617618.338287, "type": "blink_recorded", "blink_duration_sec": 0.20458173751831055}
+{"ts": 1769617618.8454278, "type": "blink_recorded", "blink_duration_sec": 0.17415237426757812}
+{"ts": 1769617619.8724976, "type": "token_committed", "mode": "CHAR", "token": "S", "blink_sequence_sec": [0.21327662467956543, 0.20458173751831055, 0.17415237426757812], "transcript": "ARIES", "prompt": null}
+{"ts": 1769617623.893958, "type": "word_boundary_commit", "word": "ARIES", "mode": "CHAR", "transcript": "ARIES", "prompt": null}
+{"ts": 1769617644.0537767, "type": "blink_recorded", "blink_duration_sec": 0.20394253730773926}
+{"ts": 1769617645.1467683, "type": "blink_recorded", "blink_duration_sec": 0.6526353359222412}
+{"ts": 1769617646.201222, "type": "blink_recorded", "blink_duration_sec": 0.7165236473083496}
+{"ts": 1769617646.7803042, "type": "blink_recorded", "blink_duration_sec": 0.20535731315612793}
+{"ts": 1769617647.802217, "type": "token_committed", "mode": "CHAR", "token": "P", "blink_sequence_sec": [0.20394253730773926, 0.6526353359222412, 0.7165236473083496, 0.20535731315612793], "transcript": "ARIES P", "prompt": null}
+{"ts": 1769617651.8265057, "type": "word_boundary_commit", "word": "P", "mode": "CHAR", "transcript": "ARIES P", "prompt": null}
+{"ts": 1769617651.8658154, "type": "blink_recorded", "blink_duration_sec": 1.8433945178985596}
+{"ts": 1769617652.884671, "type": "token_committed", "mode": "CHAR", "token": "T", "blink_sequence_sec": [1.8433945178985596], "transcript": "ARIES P T", "prompt": null}
+{"ts": 1769617657.3520536, "type": "blink_recorded", "blink_duration_sec": 0.20296382904052734}
+{"ts": 1769617658.5457058, "type": "blink_recorded", "blink_duration_sec": 0.7169828414916992}
+{"ts": 1769617658.9891424, "type": "blink_recorded", "blink_duration_sec": 0.18991780281066895}
+{"ts": 1769617660.0136638, "type": "token_committed", "mode": "CHAR", "token": "R", "blink_sequence_sec": [0.20296382904052734, 0.7169828414916992, 0.18991780281066895], "transcript": "ARIES P R", "prompt": null}
+{"ts": 1769617661.5810099, "type": "blink_recorded", "blink_duration_sec": 0.8526349067687988}
+{"ts": 1769617662.7076375, "type": "blink_recorded", "blink_duration_sec": 0.795767068862915}
+{"ts": 1769617663.9008138, "type": "blink_recorded", "blink_duration_sec": 0.8891782760620117}
+{"ts": 1769617664.9235847, "type": "token_committed", "mode": "CHAR", "token": "O", "blink_sequence_sec": [0.8526349067687988, 0.795767068862915, 0.8891782760620117], "transcript": "ARIES P RO", "prompt": null}
+{"ts": 1769617666.903349, "type": "blink_recorded", "blink_duration_sec": 0.16704630851745605}
+{"ts": 1769617667.515262, "type": "blink_recorded", "blink_duration_sec": 0.2060849666595459}
+{"ts": 1769617668.060877, "type": "blink_recorded", "blink_duration_sec": 0.19508886337280273}
+{"ts": 1769617669.0851712, "type": "token_committed", "mode": "CHAR", "token": "S", "blink_sequence_sec": [0.16704630851745605, 0.2060849666595459, 0.19508886337280273], "transcript": "ARIES P ROS", "prompt": null}
+{"ts": 1769617670.0735738, "type": "blink_recorded", "blink_duration_sec": 0.5111584663391113}
+{"ts": 1769617671.473547, "type": "blink_recorded", "blink_duration_sec": 0.9212710857391357}
+{"ts": 1769617672.4954178, "type": "token_committed", "mode": "CHAR", "token": "M", "blink_sequence_sec": [0.5111584663391113, 0.9212710857391357], "transcript": "ARIES P ROSM", "prompt": null}
+{"ts": 1769617675.1893258, "type": "blink_recorded", "blink_duration_sec": 0.4301600456237793}
+{"ts": 1769617676.7934048, "type": "blink_recorded", "blink_duration_sec": 1.0562546253204346}
+{"ts": 1769617677.8173385, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.4301600456237793, 1.0562546253204346], "transcript": "ARIES P ROSA", "prompt": null}
+{"ts": 1769617679.6560535, "type": "blink_recorded", "blink_duration_sec": 0.17335128784179688}
+{"ts": 1769617680.781298, "type": "blink_recorded", "blink_duration_sec": 0.682358980178833}
+{"ts": 1769617681.3314977, "type": "blink_recorded", "blink_duration_sec": 0.1668713092803955}
+{"ts": 1769617681.8741975, "type": "blink_recorded", "blink_duration_sec": 0.17490267753601074}
+{"ts": 1769617682.9008353, "type": "token_committed", "mode": "CHAR", "token": "L", "blink_sequence_sec": [0.17335128784179688, 0.682358980178833, 0.1668713092803955, 0.17490267753601074], "transcript": "ARIES P ROSAL", "prompt": null}
+{"ts": 1769617684.296271, "type": "blink_recorded", "blink_duration_sec": 0.16985130310058594}
+{"ts": 1769617685.320897, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.16985130310058594], "transcript": "ARIES P ROSALE", "prompt": null}
+{"ts": 1769617685.9697332, "type": "blink_recorded", "blink_duration_sec": 0.20439863204956055}
+{"ts": 1769617686.4117157, "type": "blink_recorded", "blink_duration_sec": 0.17192935943603516}
+{"ts": 1769617686.9097552, "type": "blink_recorded", "blink_duration_sec": 0.16984248161315918}
+{"ts": 1769617687.9133139, "type": "token_committed", "mode": "CHAR", "token": "S", "blink_sequence_sec": [0.20439863204956055, 0.17192935943603516, 0.16984248161315918], "transcript": "ARIES P ROSALES", "prompt": null}
+{"ts": 1769617688.9029121, "type": "blink_recorded", "blink_duration_sec": 0.13327980041503906}
+{"ts": 1769617689.2060616, "type": "blink_recorded", "blink_duration_sec": 0.1022038459777832}
+{"ts": 1769617689.811357, "type": "blink_recorded", "blink_duration_sec": 0.41190314292907715}
+{"ts": 1769617691.0830367, "type": "blink_recorded", "blink_duration_sec": 0.9905643463134766}
+{"ts": 1769617692.1051943, "type": "token_committed", "mode": "CHAR", "token": "V", "blink_sequence_sec": [0.13327980041503906, 0.1022038459777832, 0.41190314292907715, 0.9905643463134766], "transcript": "ARIES P ROSALESV", "prompt": null}
+{"ts": 1769617693.7106004, "type": "blink_recorded", "blink_duration_sec": 0.06664466857910156}
+{"ts": 1769617694.7311969, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.06664466857910156], "transcript": "ARIES P ROSALESE", "prompt": null}
+{"ts": 1769617696.5730302, "type": "blink_recorded", "blink_duration_sec": 0.1382904052734375}
+{"ts": 1769617697.59275, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.1382904052734375], "transcript": "ARIES P ROSALESE", "prompt": null}
+{"ts": 1769617702.362805, "type": "blink_recorded", "blink_duration_sec": 0.20093393325805664}
+{"ts": 1769617703.5893772, "type": "blink_recorded", "blink_duration_sec": 0.7736093997955322}
+{"ts": 1769617704.6127627, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.20093393325805664, 0.7736093997955322], "transcript": "ARIES P ROSALESA", "prompt": null}
+{"ts": 1769617709.4012942, "type": "blink_recorded", "blink_duration_sec": 0.1738595962524414}
+{"ts": 1769617710.8293624, "type": "blink_recorded", "blink_duration_sec": 1.0221824645996094}
+{"ts": 1769617711.8380697, "type": "token_committed", "mode": "CHAR", "token": "A", "blink_sequence_sec": [0.1738595962524414, 1.0221824645996094], "transcript": "ARIES P ROSALESA", "prompt": null}
+{"ts": 1769617715.8392305, "type": "word_boundary_commit", "word": "ROSALESA", "mode": "CHAR", "transcript": "ARIES P ROSALESA", "prompt": null}
+{"ts": 1769617722.906482, "type": "blink_recorded", "blink_duration_sec": 0.1307663917541504}
+{"ts": 1769617723.9065757, "type": "token_committed", "mode": "CHAR", "token": "E", "blink_sequence_sec": [0.1307663917541504], "transcript": "ARIES P ROSALESA E", "prompt": null}
+{"ts": 1769617727.9332533, "type": "word_boundary_commit", "word": "E", "mode": "CHAR", "transcript": "ARIES P ROSALESA E", "prompt": null}

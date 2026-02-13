@@ -9,6 +9,11 @@ import numpy as np
 # ================= CONFIGURATION =================
 DEFAULT_IMAGE_SIZE = (64, 64)
 
+# Font controls
+FONT_FAMILY = "Courier New"
+FONT_SIZE_HEADER_ORIG = 28
+FONT_SIZE_HEADER_AUG = 28
+
 # Define the exact augmentation values here so they are consistent everywhere
 AUGMENT_CONFIG = {
     'degrees': 10,
@@ -83,13 +88,13 @@ def preview_augmentations(target_folder, num_samples=5):
     
     # Load Transforms
     train_transform = get_train_transform()
+
+    # Apply font family globally
+    plt.rcParams.update({"font.family": FONT_FAMILY})
     
     # Setup Plot
     # We use constrained_layout=False so we can manually adjust the rect later
     fig, axes = plt.subplots(len(selected_files), 6, figsize=(16, 3.5 * len(selected_files)))
-    
-    # Bold Title with extra padding (y=0.98 puts it high up)
-    fig.suptitle(f"Augmentation Preview (Original vs 5 Random Augmentations)", fontsize=18, fontweight='bold', y=0.98)
 
     for i, filename in enumerate(selected_files):
         img_path = os.path.join(target_folder, filename)
@@ -102,7 +107,12 @@ def preview_augmentations(target_folder, num_samples=5):
         
         # ONLY add titles to the first row to keep it clean
         if i == 0:
-            ax_orig.set_title("Original", fontsize=14, fontweight='bold', pad=12)
+            ax_orig.set_title(
+                "Original",
+                fontsize=FONT_SIZE_HEADER_ORIG,
+                fontweight='bold',
+                pad=12,
+            )
         
         # --- Columns 1-5: Random Augmentations ---
         for j in range(1, 6):
@@ -119,16 +129,19 @@ def preview_augmentations(target_folder, num_samples=5):
             
             # Column Headers for the first row only
             if i == 0:
-                ax_aug.set_title(f"Augmentation {j}", fontsize=12, pad=12)
+                ax_aug.set_title(
+                    f"Augment {j}",
+                    fontsize=FONT_SIZE_HEADER_AUG,
+                    pad=12,
+                )
 
-    # CRITICAL FIX: Reserve top 5% of space for the main Suptitle
-    # rect=[left, bottom, right, top]
-    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    # Fit layout without a suptitle
+    plt.tight_layout(rect=[0, 0, 1, 1])
     plt.show()
 
 if __name__ == "__main__":
     # --- UPDATE THIS PATH TO TEST ---
-    TEST_FOLDER = r"C:\Users\Aries\Desktop\Augmentation_Test\open" 
+    TEST_FOLDER = "training_dataset\open"
     
     print(f"Previewing augmentations from: {TEST_FOLDER}")
     preview_augmentations(TEST_FOLDER, num_samples=4)
