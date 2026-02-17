@@ -71,14 +71,14 @@ def create_courier_comparison():
     # --- Data Definition ---
     # Left Matrix Data
     cm_left = np.array([
-        [13248, 3], 
-        [126, 39667]
+        [12514, 737], 
+        [611, 39182]
     ])
     
     # Right Matrix Data
     cm_right = np.array([
-        [13236, 15], 
-        [253, 39540]
+        [12179, 1072], 
+        [971, 38822]
     ])
     
     class_names = ['closed', 'open']

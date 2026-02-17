@@ -85,7 +85,7 @@ WORD_PAUSE_THRESHOLD = 2.0
 # Word pause only starts after being idle for this long (no committed letters)
 WORD_PAUSE_GRACE = 2.0
 SENTENCE_SPEAK_BLINK_SEC = 2.0  # long blink gesture: speak the full current transcript
-BATCH_COMMIT_BLINK_SEC = 2.0    # long blink gesture: decode buffered Morse
+BATCH_COMMIT_BLINK_SEC = 2.0    # long blinck gesture: decode buffered Morse
 MIN_OPEN_STABILITY = 0.1 # seconds; debounce time to ignore blink glitches
 DOT_DASH_THRESHOLD = 0.48  # split between dot and dash durations (sec)
 

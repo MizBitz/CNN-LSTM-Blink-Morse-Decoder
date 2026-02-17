@@ -9,10 +9,10 @@ import onnxruntime as ort
 # ==========================================
 FONT_FAMILY = "Courier New"
 FONT_SIZE_TITLE = 12
-FONT_SIZE_AXIS_LABEL = 28
-FONT_SIZE_TICK = 28
-FONT_SIZE_LEGEND = 28
-FONT_SIZE_ANNOTATION = 28
+FONT_SIZE_AXIS_LABEL = 32
+FONT_SIZE_TICK = 32
+FONT_SIZE_LEGEND = 32
+FONT_SIZE_ANNOTATION = 32
 
 def main():
     # ==========================================

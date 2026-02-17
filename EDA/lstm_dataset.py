@@ -88,48 +88,49 @@ def main():
         print(f" SUGGESTED THRESHOLD: {threshold:.4f} s")
         print("="*50 + "\n")
 
-    # --- Plotting ---
-    fig, axes = plt.subplots(1, 3, figsize=(16, 5))
-
+    # --- Plotting (separate windows) ---
     # 1. Per-label counts
     lbls = list(Counter(labels).keys())
     if lbls:
-        axes[0].bar(lbls, [Counter(labels)[l] for l in lbls], color="#2196f3")
-        axes[0].set_title("Counts by label")
-        axes[0].tick_params(axis="x", rotation=45)
+        fig1, ax1 = plt.subplots(figsize=(6, 4))
+        ax1.bar(lbls, [Counter(labels)[l] for l in lbls], color="#2196f3")
+        ax1.set_title("Counts by label")
+        ax1.tick_params(axis="x", rotation=45)
+        fig1.tight_layout()
 
     # 2. Sequence length distribution
     if lengths:
-        axes[1].hist(lengths, bins=range(1, max(lengths)+2), color="#4caf50", align="left")
-        axes[1].set_title("Blink count per sample")
-        axes[1].set_xlabel("# blinks")
+        fig2, ax2 = plt.subplots(figsize=(6, 4))
+        ax2.hist(lengths, bins=range(1, max(lengths)+2), color="#4caf50", align="left")
+        ax2.set_title("Blink count per sample")
+        ax2.set_xlabel("# blinks")
+        fig2.tight_layout()
 
     # 3. Duration distribution
     if len(all_durs) > 0:
-        axes[2].hist(all_durs, bins=40, color="#9c27b0", alpha=0.6, label="Data Distribution")
-        axes[2].set_title("Blink Durations (s)")
-        axes[2].set_xlabel("Duration (s)")
+        fig3, ax3 = plt.subplots(figsize=(6, 4))
+        ax3.hist(all_durs, bins=40, color="#9c27b0", alpha=0.6, label="Data Distribution")
+        ax3.set_title("Blink Durations (s)")
+        ax3.set_xlabel("Duration (s)")
         
         if has_clusters:
-            # Add vertical lines for Means
-            axes[2].axvline(dot_mean, color='red', linestyle='--', linewidth=2, 
-                            label=f'Dot Avg: {dot_mean:.2f}s')
-            axes[2].axvline(dash_mean, color='blue', linestyle='--', linewidth=2, 
-                            label=f'Dash Avg: {dash_mean:.2f}s')
+            # Mark cluster means and ranges for quick visual thresholding
+            ax3.axvline(dot_mean, color='red', linestyle='--', linewidth=2, 
+                        label=f'Dot Avg: {dot_mean:.2f}s')
+            ax3.axvline(dash_mean, color='blue', linestyle='--', linewidth=2, 
+                        label=f'Dash Avg: {dash_mean:.2f}s')
             
-            # Add shaded regions for Ranges (Min to Max)
-            axes[2].axvspan(dot_min, dot_max, color='red', alpha=0.1, 
-                            label=f'Dot Range: {dot_min:.2f}-{dot_max:.2f}s')
-            axes[2].axvspan(dash_min, dash_max, color='blue', alpha=0.1, 
-                            label=f'Dash Range: {dash_min:.2f}-{dash_max:.2f}s')
+            ax3.axvspan(dot_min, dot_max, color='red', alpha=0.1, 
+                        label=f'Dot Range: {dot_min:.2f}-{dot_max:.2f}s')
+            ax3.axvspan(dash_min, dash_max, color='blue', alpha=0.1, 
+                        label=f'Dash Range: {dash_min:.2f}-{dash_max:.2f}s')
 
-            # Threshold
-            axes[2].axvline(threshold, color='green', linestyle=':', linewidth=2,
-                            label=f'Threshold: {threshold:.2f}s')
+            ax3.axvline(threshold, color='green', linestyle=':', linewidth=2,
+                        label=f'Threshold: {threshold:.2f}s')
 
-        axes[2].legend(loc='upper right', fontsize='small')
+        ax3.legend(loc='upper right', fontsize='small')
+        fig3.tight_layout()
 
-    plt.tight_layout()
     plt.show()
 
 if __name__ == "__main__":
